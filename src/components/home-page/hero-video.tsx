@@ -5,18 +5,7 @@ import Link from "next/link";
 
 const HeroVideo = () => {
     return (
-        <div className='relative overflow-hidden w-full p-[150px] pt-[20px] pb-[20px] flex flex-col'>
-
-            <video autoPlay loop
-                   muted playsInline data-wf-ignore="true" data-object-fit="cover" className={"absolute top-0 left-0 w-full -z-10"}>
-                <source
-                    src="https://cdn.prod.website-files.com/67bafcff360152c2d8be2546%2F67d04becc9cabf3459083d15__Hero-Mobile%20%28750X750%29-transcode.mp4"
-                    data-wf-ignore="true"/>
-                <source
-                    src="https://cdn.prod.website-files.com/67bafcff360152c2d8be2546%2F67d04becc9cabf3459083d15__Hero-Mobile%20%28750X750%29-transcode.webm"
-                    data-wf-ignore="true"/>
-            </video>
-
+        <div className='w-full p-[150px] pt-[20px] pb-[20px] flex flex-col'>
 
             <h1 className='text-[80px] font-[800] max-w-[625px]'>
                 Create your best content yet.
