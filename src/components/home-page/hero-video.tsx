@@ -1,7 +1,7 @@
 import React from 'react';
 import {HeroCheckboxItems} from "@/lib/definitions";
 import HeroCheckbox from "@/components/home-page/hero-checkbox";
-import Link from "next/link";
+import StartLink from "@/components/home-page/start-link";
 
 const HeroVideo = () => {
     return (
@@ -29,10 +29,7 @@ const HeroVideo = () => {
                     ))
                 }
             </div>
-            <Link href={"/"}
-                  className={"bg-purple-500 text-white pt-[15px] pr-[30px] pb-[16px] pl-[30px] text-center rounded-[4px] text-[14px] font-[700] line-[17px] mt-6 w-[200px] hover:bg-purple-500 transition duration-200"}>
-                Start for free
-            </Link>
+            <StartLink/>
             <p className={"mt-1 text-xs text-gray-7"}>* No credit card needed. Free plan available.</p>
         </div>
     );

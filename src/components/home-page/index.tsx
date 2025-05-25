@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './navbar'
 import HeroVideo from './hero-video'
 import Feature1 from "@/components/home-page/feature-1";
+import Feature2 from "@/components/home-page/feature-2";
 
 const HomePage = () => {
     return (
@@ -28,6 +29,7 @@ const HomePage = () => {
                 </div>
             </div>
             <Feature1/>
+            <Feature2/>
         </div>
     )
 }
