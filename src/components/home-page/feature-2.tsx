@@ -1,6 +1,7 @@
 import FeatureTitle from "@/components/home-page/feature-title";
 import StartLink from "@/components/home-page/start-link";
 import Image from "next/image";
+import Tracks from "@/components/home-page/tracks";
 
 const Feature2 = () => {
     return (
@@ -17,7 +18,7 @@ const Feature2 = () => {
             <div className="text-purple-500 line-[25px] cursor-pointer mt-2">
                 Learn More -&gt;
             </div>
-            <div className="flex justify-start items-center w-full ">
+            <div className="flex justify-start items-center w-full">
                 <div
                     className="grid relative mt-12 w-[65.625vw] pt-[10px] pr-[10px] grid-cols-[1fr_32.75vw] grid-rows-auto gap-0 bg-[url('https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666fcc404642477c7f31bc95_tablet-svg.svg')] bg-[length:cover] bg-[position:100%_0]"
                 >
@@ -58,8 +59,9 @@ const Feature2 = () => {
                         className="absolute top-[20px] right-[20px] rounded-md"
                     />
                 </div>
-                <div className="flex flex-col justify-between items-center ml-6 mr-6">
+                <div className="flex flex-col gap-y-40 items-center ml-6 mr-6">
                     <Image src={"https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2ca7dbc972f1d392ec398_rec-tab.png"} alt={""} width={954} height={554} className={"rounded-[1.12vw] w-[33vw]"} />
+                    <Tracks/>
                 </div>
             </div>
         </div>

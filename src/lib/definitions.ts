@@ -26,3 +26,10 @@ export const feature_1_images = [
     {src : "/photo_3.png", title:  "Mark Zuckerberg & Gary Vee"},
     {src : "/photo_4.png", title:  "Tim Cook & Andrew Ross Sorkin"},
 ]
+
+export const tracks_items = [{src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666ffb8eb9943c46fa214fa9_marsha.png", name : "Marsha", status : "Ready"}, {
+    src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666ffb8eebc8e4b1bf836c3b_steve.png", name : "Stephen", status : "Ready"
+},
+    {
+        src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666ff59fcce7c32f415cd12b_users-03.svg", name : "All", status : "Speakers"
+    }]
