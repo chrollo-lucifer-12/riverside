@@ -45,5 +45,101 @@ export const feature_3_items = [
 export const feature_5_items = [
     {src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666318b72635012e2a08c9af_ai-show_plugit.png", title : "AI Show Notes", subTitle : "With AI-generated titles, descriptions, chapters, takeaways, keywords, and soundbites, all that’s left is to hit publish."},
     {src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666318b75502d4aaf4b0b15c_transcriptions_plugit.png", title: "Transcription", subTitle: "Our automatic transcription kicks in as soon as you’re done recording. All, so you can create captions, improve discoverability, boost SEO, and more."},
-
 ]
+
+export const footerSections = [
+    {
+        category: "Company",
+        links: [
+            "About Us",
+            "Careers",
+            "Partners",
+            "Affiliate Program",
+            "Creator Partnerships"
+        ]
+    },
+    {
+        category: "Product",
+        links: [
+            "Why Riverside",
+            "Pricing",
+            "For Business",
+            "Mac App",
+            "Mobile Apps",
+            "FAQ",
+            "Support"
+        ]
+    },
+    {
+        category: "Features",
+        links: [
+            "Recording",
+            "Livestream",
+            "Editor",
+            "Magic Clips",
+            "Transcriptions",
+            "Captions",
+            "Magic Audio",
+            "AI Show Notes",
+            "Teleprompter",
+            "Async Recording",
+            "Media Board",
+            "Clean Up",
+            "Overlays",
+            "Studio Branding"
+        ]
+    },
+    {
+        category: "Use Cases",
+        links: [
+            "Video Marketing",
+            "Podcasts",
+            "Learning & Development",
+            "Internal Communications",
+            "Webinars",
+            "Customer Testimonials",
+            "Virtual Conferences",
+            "Live Show",
+            "Split-Screen Video"
+        ]
+    },
+    {
+        category: "Tools",
+        links: [
+            "Podcast Maker",
+            "Podcast Recorder",
+            "Live Podcast",
+            "YouTube Video Maker",
+            "Screen Recorder",
+            "Video Compressor",
+            "WAV To MP3",
+            "Podcast Name Generator",
+            "YouTube Name Generator",
+            "Mic Test",
+            "Webcam Test",
+            "All Tools"
+        ]
+    },
+    {
+        category: "Solutions",
+        links: [
+            "Podcasters",
+            "Producers",
+            "Marketers"
+        ]
+    },
+    {
+        category: "Resources",
+        links: [
+            "Riverside University",
+            "Recorded On Riverside",
+            "Help Center",
+            "Case Studies",
+            "Webinar Hub",
+            "Blog",
+            "Masterclass",
+            "Community Hub",
+            "Video Editing Glossary"
+        ]
+    },
+];

@@ -17,11 +17,11 @@ const Feature3 = () => {
         <div className="text-purple-500 line-[25px] cursor-pointer mt-2">
             Learn More -&gt;
         </div>
-        <div className={"flex flex-col gap-y-6 items-center justify-center mt-10 sm:pl-[220px] sm:pr-[220px] p-2"}>
+        <div className={"flex flex-col gap-y-6 items-center justify-center mt-10 lg:pl-[220px] lg:pr-[220px] p-2"}>
             <Image
                 src={"https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/6662a9974a19239119c676ec_edit_it.webp"}
                 alt={""} width={1716} height={1076} className={"border-10 rounded-lg border-gray-10"}/>
-            <div className={"flex flex-col justify-between w-full sm:flex-row gap-y-6"}>
+            <div className={"flex flex-col justify-between w-full sm:flex-row gap-y-6 gpa-x-6"}>
                 <div className={"bg-gray-10 rounded-lg text-white font-[300] line-[22px]"}>
                     <div className={"flex flex-col gap-y-2 pt-[35px] pb-[45px] pl-[24px] pr-[24px]"}>
                         <h3 className={"text-[30px] font-[700] line-[34px] "}>Text-based editing</h3>
@@ -48,7 +48,7 @@ const Feature3 = () => {
             <p>Editing simplified,</p>
             <p className={"font-semibold"}>in the blink of AI</p>
         </span>
-        <div className={"flex w-full gap-y-6 flex-col sm:flex-row justify-between mt-10 md:pl-[120px] md:pr-[120px] p-2"}>
+        <div className={"flex w-full gap-y-6 flex-col sm:flex-row justify-between mt-10 lg:pl-[120px] lg:pr-[120px] p-2"}>
             {
                 feature_3_items.slice(0,3).map((item,i) => (
                     <div key={i} className={"bg-gray-10 rounded-lg sm:ml-10 w-full flex flex-col"}>
@@ -59,7 +59,7 @@ const Feature3 = () => {
                 ))
             }
         </div>
-        <div className={"flex flex-col gap-y-6 sm:flex-row w-full justify-between md:pl-[320px] md:pr-[320px] mt-2 p-2"}>
+        <div className={"flex flex-col gap-y-6 sm:flex-row w-full justify-between lg:pl-[320px] lg:pr-[320px] mt-2 p-2"}>
             {
                 feature_3_items.slice(3).map((item,i) => (
                     <div key={i} className={"bg-gray-10 rounded-lg sm:ml-10 w-full flex flex-col"}>

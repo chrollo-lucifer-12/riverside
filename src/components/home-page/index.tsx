@@ -7,6 +7,7 @@ import Feature3 from "@/components/home-page/feature-3";
 import Feature4 from "@/components/home-page/feature-4";
 import Feature5 from "@/components/home-page/feature-5";
 import Feature6 from "@/components/home-page/feature-6";
+import Footer from "@/components/home-page/footer";
 
 const HomePage = () => {
     return (
@@ -38,6 +39,7 @@ const HomePage = () => {
             <Feature4/>
             <Feature5/>
             <Feature6/>
+            <Footer/>
         </div>
     )
 }
