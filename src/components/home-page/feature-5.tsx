@@ -5,7 +5,7 @@ import StartLink from "@/components/home-page/start-link";
 import Marquee from "react-fast-marquee";
 
 const Feature5 = () => {
-    return <div className={"w-full pt-[80px] pb-[80px] flex flex-col gap-y-2 items-center mb-20"}>
+    return <div className={"w-full pt-[80px] pb-[80px] flex flex-col gap-y-2 items-center"}>
         <FeatureTitle
             title={"Publish & promote it, easy."}
             titleColor={"white"}
