@@ -15,7 +15,8 @@ const AuthDialog = () => {
                 <motion.div key="signup"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ duration: 0.15, ease: "easeInOut" }}
+                            exit={{opacity : 0}}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
                             className={"w-full flex flex-col gap-y-2 items-center justify-center"}
                            >
                 <SignupForm handleSwitchTab={() => setTab("login")} />
@@ -24,7 +25,8 @@ const AuthDialog = () => {
                 <motion.div key="login"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ duration: 0.15, ease: "easeInOut" }}
+                            exit={{opacity : 0}}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
                             className={"w-full flex flex-col gap-y-2 items-center justify-center"}
                            >
 
