@@ -3,6 +3,7 @@ import Navbar from './navbar'
 import HeroVideo from './hero-video'
 import Feature1 from "@/components/home-page/feature-1";
 import Feature2 from "@/components/home-page/feature-2";
+import Feature3 from "@/components/home-page/feature-3";
 
 const HomePage = () => {
     return (
@@ -30,6 +31,7 @@ const HomePage = () => {
             </div>
             <Feature1/>
             <Feature2/>
+            <Feature3/>
         </div>
     )
 }

@@ -33,3 +33,11 @@ export const tracks_items = [{src : "https://cdn.prod.website-files.com/5f996b22
     {
         src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666ff59fcce7c32f415cd12b_users-03.svg", name : "All", status : "Speakers"
     }]
+
+export const feature_3_items = [
+    {src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2d7e189f5e94dc5a21e20_ai-voice__visual.webp", title : "AI Voice", subTitle : "Text-to-speech, in your own voice – no one else’s. Ideal for intros, outros, ad-reads, and quick fixes."},
+    {src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2d7e2b6ac7f68fb458260_videodub__visual.webp", title : "VideoDub", subTitle: "Sync your lips with your AI Voice, for a perfectly natural video-audio harmony."},
+    {src: "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67da9cb7f52806ab54fc35ab_clean-up__visual.svg", title:  "Clean up", subTitle: "Get rid of unneeded silences and unnecessary filler words, and get flawless flow."},
+    {src: "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2d7e2bbd838c36e115e37_captions__visual.webp", title: "Captions", subTitle: "One click and your recording’s captioned. A few more, and they're designed and animated."},
+    {src:  "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2d7e13e73732fedf54fdf_magic-audio__visual.webp", title: "Magic Audio", subTitle: "Tune up your audio so that it sounds as if it was recorded in a professional studio."}
+]
