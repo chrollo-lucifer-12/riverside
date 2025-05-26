@@ -5,6 +5,7 @@ import Feature1 from "@/components/home-page/feature-1";
 import Feature2 from "@/components/home-page/feature-2";
 import Feature3 from "@/components/home-page/feature-3";
 import Feature4 from "@/components/home-page/feature-4";
+import Feature5 from "@/components/home-page/feature-5";
 
 const HomePage = () => {
     return (
@@ -34,6 +35,7 @@ const HomePage = () => {
             <Feature2/>
             <Feature3/>
             <Feature4/>
+            <Feature5/>
         </div>
     )
 }

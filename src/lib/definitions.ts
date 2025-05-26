@@ -41,3 +41,9 @@ export const feature_3_items = [
     {src: "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2d7e2bbd838c36e115e37_captions__visual.webp", title: "Captions", subTitle: "One click and your recording’s captioned. A few more, and they're designed and animated."},
     {src:  "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2d7e13e73732fedf54fdf_magic-audio__visual.webp", title: "Magic Audio", subTitle: "Tune up your audio so that it sounds as if it was recorded in a professional studio."}
 ]
+
+export const feature_5_items = [
+    {src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666318b72635012e2a08c9af_ai-show_plugit.png", title : "AI Show Notes", subTitle : "With AI-generated titles, descriptions, chapters, takeaways, keywords, and soundbites, all that’s left is to hit publish."},
+    {src : "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666318b75502d4aaf4b0b15c_transcriptions_plugit.png", title: "Transcription", subTitle: "Our automatic transcription kicks in as soon as you’re done recording. All, so you can create captions, improve discoverability, boost SEO, and more."},
+
+]
