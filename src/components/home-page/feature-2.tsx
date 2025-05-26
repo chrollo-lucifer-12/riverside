@@ -18,9 +18,9 @@ const Feature2 = () => {
             <div className="text-purple-500 line-[25px] cursor-pointer mt-2">
                 Learn More -&gt;
             </div>
-            <div className="flex  items-center w-full">
+            <div className="flex flex-col sm:flex-row sm:items-center w-full gap-y-10">
                 <div
-                    className="grid relative mt-12 w-[65.625vw] pt-[10px] pr-[10px] grid-cols-[1fr_32.75vw] grid-rows-auto gap-0 bg-[url('https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666fcc404642477c7f31bc95_tablet-svg.svg')] bg-[length:cover] bg-[position:100%_0]"
+                    className="grid relative mt-12 sm:w-[65.625vw] pt-[10px] pr-[10px] grid-cols-[1fr_32.75vw] grid-rows-auto gap-0 bg-[url('https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/666fcc404642477c7f31bc95_tablet-svg.svg')] bg-[length:cover] bg-[position:100%_0]"
                 >
                     <Image
                         src={
@@ -47,7 +47,7 @@ const Feature2 = () => {
                         alt={""}
                         width={109}
                         height={32}
-                        className="absolute left-[435px] top-[3px]"
+                        className="absolute left-[435px] top-[3px] hidden lg:block"
                     />
                     <Image
                         src={
@@ -59,8 +59,8 @@ const Feature2 = () => {
                         className="absolute top-[20px] right-[20px] rounded-md"
                     />
                 </div>
-                <div className="flex flex-col gap-y-40 items-center ml-6 mr-6">
-                    <Image src={"https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2ca7dbc972f1d392ec398_rec-tab.png"} alt={""} width={954} height={554} className={"rounded-[1.12vw] w-[33vw]"} />
+                <div className="flex flex-col sm:gap-y-40 gap-y-10 items-center ml-6 mr-6">
+                    <Image src={"https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2ca7dbc972f1d392ec398_rec-tab.png"} alt={""} width={954} height={554} className={"rounded-[1.12vw] sm:w-[33vw]"} />
                     <Tracks/>
                 </div>
             </div>

@@ -5,14 +5,14 @@ import StartLink from "@/components/home-page/start-link";
 import Marquee from "react-fast-marquee";
 
 const Feature5 = () => {
-    return <div className={"w-full pt-[80px] pb-[80px] flex flex-col gap-y-2 items-center"}>
+    return <div className={"w-full pt-[80px] pb-[80px] flex flex-col gap-y-2 items-center pl-2 pr-2 lg:pl-0 lg:pr-0"}>
         <FeatureTitle
             title={"Publish & promote it, easy."}
             titleColor={"white"}
         />
-        <div className={"flex w-full justify-between pl-[220px] pr-[220px] mt-6"}>
+        <div className={"flex flex-col sm:flex-row gap-y-4 w-full justify-between lg:pl-[220px] lg:pr-[220px] mt-6"}>
             {
-                feature_5_items.map((item, i) => <div key={i} className={"flex justify-between bg-gray-12 rounded-lg"}>
+                feature_5_items.map((item, i) => <div key={i} className={"flex flex-col sm:flex-row sm:justify-between gap-y-2 bg-gray-12 rounded-lg"}>
                     <div className={"pt-12 pb-12 pl-6 pr-6 flex flex-col justify-between"}>
                         <div className={""}>
                             <p className={"text-white font-bold text-2xl"}>{item.title}</p>
@@ -27,12 +27,12 @@ const Feature5 = () => {
                     <Image
                         src={item.src}
                         alt={""} width={290} height={220} className={"rounded-lg p-2"}/>
-                </div>)
+                </div>
+                )
             }
         </div>
-        <div className={"w-full pl-[220px] pr-[220px]"}>
-
-            <div className={"flex justify-between bg-gray-12 rounded-lg  mt-2"}>
+        <div className={"w-full lg:pl-[220px] lg:pr-[220px] pl-2 pr-2"}>
+            <div className={"flex flex-col sm:flex-row sm:justify-between gap-y-2 bg-gray-12 rounded-lg  mt-2"}>
                 <div className={"pt-12 pb-12 pl-6 pr-6 flex flex-col justify-between"}>
                     <div className={""}>
                         <p className={"text-white font-bold text-2xl"}>Magic Clips</p>
@@ -50,7 +50,7 @@ const Feature5 = () => {
                     alt={""} width={900} height={737} className={"rounded-lg p-2"}/>
             </div>
         </div>
-        <div className={"w-full pl-[220px] pr-[220px] mt-2 "}>
+        <div className={"w-full sm:pl-[220px] sm:pr-[220px] pl-2 pr-2 mt-2 "}>
             <div
                 className={"text-center rounded-lg flex flex-col gap-y-1 items-center justify-center pt-[68px] pb-[59px] font-[300] text-lg shadow-md bg-gray-12"}>
                 <p className={"text-[30px] font-[400] line-[40px]"}>Record. Stream. Edit. All in one place.</p>
@@ -59,9 +59,9 @@ const Feature5 = () => {
             </div>
         </div>
         <div className={"w-full mt-12 pt-[90px] pb-[23px] "} style={{backgroundImage : "url(https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67d2e0da0fb1b64faa57f670_recording__bg.webp)"}}>
-            <div className={"flex flex-col gap-y-2 pl-[220px] pr-[220px]"}>
-                <h1 className={"font-bold text-5xl max-w-[380px]"}>Take one, for the team.</h1>
-                <p className={"text-md text-gray-7 max-w-[431px]"}>Everything we have to offer, plus seamless
+            <div className={"flex flex-col gap-y-2 sm:pl-[220px] sm:pr-[220px] pl-2 pr-2"}>
+                <h1 className={"font-bold sm:text-5xl text-lg text-center sm:text-start max-w-[380px]"}>Take one, for the team.</h1>
+                <p className={"sm:text-md text-xs text-gray-7 max-w-[431px] text-center sm:text-start"}>Everything we have to offer, plus seamless
                     collaboration, advanced production controls, and all the security standards and support your
                     business requires.</p>
 

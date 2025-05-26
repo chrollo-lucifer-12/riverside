@@ -5,16 +5,16 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='bg-transparent p-[20px] pl-[12px] flex items-center justify-between'>
+    <div className='md:bg-transparent bg-white p-[20px] pl-[12px] flex items-center justify-between fixed w-full'>
       <div className='flex items-center'>
         <Image color='white' src={"https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/63c7db55c443b0eaaf0fe9c5_navbar-logo-updated-black.svg"} alt='' width={133} height={20} className='text-white' />
-        <div className='flex items-center ml-[24px] gap-x-10 font-[300] text-[16px] leading-[22px] text-gray-5 '>
+        <div className='lg:flex items-center ml-[24px] gap-x-10 font-[300] text-[16px] leading-[22px] text-gray-5 hidden'>
         {
             NavbarItems_1.map((item) => <Link className='hover:text-gray-6 transition duration-150' key={item.name} href={"/"}>{item.name}</Link>)
         }
         </div>
       </div>
-      <div className='flex items-center'>
+      <div className='md:flex items-center hidden'>
         <div className='flex items-center ml-[24px] gap-x-10 font-[300] text-[16px] leading-[22px] text-gray-5 '>
         {
             NavbarItems_2.map((item) => <Link className='hover:text-gray-6 transition duration-150' key={item.name} href={"/"}>{item.name}</Link>)

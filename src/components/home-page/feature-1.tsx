@@ -6,7 +6,7 @@ import VideoDisplay from "@/components/home-page/video-display";
 
 const Feature1 = () => {
     return <div className={"p-[37px] w-full flex flex-col items-center justify-center bg-[#191919]"}>
-        <h1 className={"mb-[30px] text-[18px] font-[400] line-[22px] text-gray-6"}>Trusted by individuals &
+        <h1 className={"mb-[30px] sm:text-[18px]  font-[400] line-[22px] text-gray-6 text-center"}>Trusted by individuals &
             businesses</h1>
         <div className={"flex gap-x-6 items-center mb-[39px]"}>
             <Image src={"/icon_LEADER.png"} alt={""} width={50} height={55}/>
@@ -31,8 +31,8 @@ const Feature1 = () => {
                 />
             ))}
         </Marquee>
-        <h1 className={"mb-[24px] text-[30px] font-[700] line-[34px]"}>Made with Riverside</h1>
-        <div className={"flex gap-x-6"}>
+        <h1 className={"mb-[24px] sm:text-[30px] text-[20px] font-[700] line-[34px]"}>Made with Riverside</h1>
+        <div className={"flex gap-x-6 max-w-[100vw] overflow-x-auto"}>
             {
                 feature_1_images.map((item,i) => <VideoDisplay key={i} src={item.src} title={item.title}/>)
             }
