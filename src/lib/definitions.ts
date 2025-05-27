@@ -1,3 +1,5 @@
+import {CalendarCheckIcon, FolderClosedIcon, HouseIcon} from "lucide-react";
+
 export const NavbarItems_1 = [{name : "Product"}, {name : "Solutions"}, {name : "Resources"}, {name : "For Business"}, {name : "Pricing"}]
 
 export const NavbarItems_2 = [{name : "Contact Sales"}, {name : "Login"}]
@@ -143,6 +145,12 @@ export const footerSections = [
         ]
     },
 ];
+
+export const sidebar_links = [
+    {name : "Home", href : "/dashboard/home", icon : HouseIcon},
+    {name: "Projects", href: "/dashboard/projects", icon : FolderClosedIcon},
+    {name: "Scheduled", href: "/dashboard/scheduled", icon : CalendarCheckIcon}
+]
 
 export type EmailSignupActionState = {errors ? : {name ?: string[], email ? : string[], password ?: string[]}} | undefined
 export type EmailLoginActionState = {errors ? : { email ? : string[], password ?: string[]}} | undefined

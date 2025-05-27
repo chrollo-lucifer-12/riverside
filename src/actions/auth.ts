@@ -45,7 +45,7 @@ export const EmailSignupAction = async (state : EmailSignupActionState , formDat
             }})
 
         const token = generateSessionToken();
-        await createSession(token, userExists.id)
+        const session = await createSession(token, userExists.id)
         await setSessionTokenCookie(token, new Date(Date.now() + 1000 * 60 * 60 * 24 * 30))
 
         const verificationToken = await prisma.verificationToken.create({

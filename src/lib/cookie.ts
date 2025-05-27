@@ -28,6 +28,18 @@ export async function deleteSessionTokenCookie(): Promise<void> {
     });
 }
 
+
+export const verifyCurrentSession = cache(async () => {
+    const cookieStore = await cookies();
+    const token = cookieStore.get("session")?.value ?? null;
+
+    if (token) {
+        return {isAuth : true}
+    }
+
+    return {isAuth : false};
+})
+
 export const getCurrentSession = cache(async () => {
     const cookieStore = await cookies();
     const token = cookieStore.get("session")?.value ?? null;
