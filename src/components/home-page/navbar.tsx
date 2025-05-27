@@ -56,7 +56,7 @@ const Navbar = () => {
                     ))}
                 </div>
                 <Link
-                    href='/'
+                    href='/dashboard'
                     className={`sm:ml-[25px] text-center text-[13px] font-[700] line-[16px] sm:text-gray-5 text-gray-9 rounded-[4px] border  sm:pt-[15.5px] sm:pb-[15.5px] sm:pl-[14px] sm:pr-[14px]  transition duration-150 ${isScrolled ? "bg-black text-white hover:bg-gray-900" : "border-white hover:bg-white hover:text-black"} `}
                 >
                     Start for Free
