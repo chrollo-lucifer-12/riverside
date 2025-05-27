@@ -4,10 +4,15 @@ import CustomButton from "@/components/custom-button";
 import Image from "next/image";
 import CustomInput from "@/components/custom-input";
 import {useRouter} from "next/navigation";
+import {useActionState} from "react";
+import {EmailLoginAction} from "@/actions/auth";
+import Form from "next/form";
+import FormError from "@/components/form-error";
+import {EmailLoginActionState, EmailSignupActionState} from "@/lib/definitions";
 
 const LoginForm = ({handleSwitchTab} : {handleSwitchTab : () => void
 }) => {
-
+    const[state,action,pending] = useActionState<EmailLoginActionState, FormData>(EmailLoginAction,undefined);
     const router = useRouter();
     return <>
         <h1 className={"text-2xl font-bold"}>Log in to Riverside</h1>
@@ -26,13 +31,16 @@ const LoginForm = ({handleSwitchTab} : {handleSwitchTab : () => void
             </CustomButton>
         </div>
         <p className={"mt-4  mb-4 text-xs text-gray-8 font-bold"}>Or</p>
-        <form className={"flex flex-col gap-y-2 w-[70%]"}>
-            <CustomInput inputMode={"email"} placeholder={"Email"} />
-            <CustomInput inputMode={"password"} placeholder={"Password"} />
-            <CustomButton cn="bg-purple-500 hover:bg-purple-600" type={"button"} >
+        <Form action={action} className={"flex flex-col gap-y-2 w-[70%]"}>
+            <CustomInput inputMode={"email"} placeholder={"Email"} name={"email"} error={state?.errors?.email} />
+            <CustomInput inputMode={"password"} placeholder={"Password"} name={"password"} error={state?.errors?.password} />
+            {
+                state?.errors && <FormError errors={Object.values(state.errors).flat().filter(Boolean).slice(0,3)}/>
+            }
+            <CustomButton cn="bg-purple-500 hover:bg-purple-600" type={"submit"} disabled={pending} >
                 Log in
             </CustomButton>
-        </form>
+        </Form>
     </>
 }
 

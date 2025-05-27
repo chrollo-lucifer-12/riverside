@@ -1,9 +1,9 @@
 "use server"
 
-import {EmailSignupFormSchema, validateData} from "@/lib/schemas";
-import {EmailSignupActionState} from "@/lib/definitions";
+import {EmailLoginSchema, EmailSignupFormSchema, validateData} from "@/lib/schemas";
+import {EmailLoginActionState, EmailSignupActionState} from "@/lib/definitions";
 import {prisma} from "@/lib/db"
-import {hash} from "bcrypt"
+import {hash, compare} from "bcrypt"
 import {createSession, generateSessionToken} from "@/lib/session";
 import {setSessionTokenCookie} from "@/lib/cookie";
 import { Resend } from 'resend';
@@ -70,4 +70,52 @@ export const EmailSignupAction = async (state : EmailSignupActionState , formDat
     } catch (e) {
         console.log(e);
     }
+}
+
+export const EmailLoginAction = async (state : EmailLoginActionState, formData : FormData) => {
+    const data = {
+        email : formData.get("email"),
+        password : formData.get("password")
+    }
+
+    const validationResult = validateData(EmailLoginSchema, data)
+
+    if (validationResult.errors) {
+        return {
+            errors : validationResult.errors
+        }
+    }
+
+    const {email, password} = validationResult.data
+
+    try {
+        let userExists = await prisma?.user.findUnique({where : {email}});
+        if (!userExists) {
+            return {
+                errors : {
+                    email : ["This email doesn't exist."]
+                }
+            }
+        }
+
+        const comparePassword = await compare(password, userExists.password!);
+
+        if (!comparePassword) {
+            return {
+                errors : {
+                    password : ["Wrong password, please try again."]
+                }
+            }
+        }
+
+        const token = generateSessionToken();
+        await createSession(token, userExists.id)
+        await setSessionTokenCookie(token, new Date(Date.now() + 1000 * 60 * 60 * 24 * 30))
+
+        revalidatePath("/dashboard")
+    } catch (e) {
+        console.log(e);
+    }
+
+
 }
