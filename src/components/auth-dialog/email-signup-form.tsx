@@ -24,7 +24,7 @@ const EmailSignupForm = ({handleSwitchTab} : {handleSwitchTab : () => void
             {
                 state?.errors && <FormError errors={Object.values(state.errors).flat().filter(Boolean).slice(0,3)}/>
             }
-            <CustomButton cn="bg-purple-500 hover:bg-purple-600" type={"submit"} >
+            <CustomButton disabled={pending} cn="bg-purple-500 hover:bg-purple-600" type={"submit"} >
                 Create your account
             </CustomButton>
         </Form>
