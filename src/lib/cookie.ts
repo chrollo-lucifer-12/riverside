@@ -1,7 +1,8 @@
-import "server-only"
 import {cookies} from "next/headers";
 import {cache} from "react";
-import {validateSession} from "@/lib/session";
+import {validateSessionToken} from "@/lib/session";
+
+// ...
 
 export async function setSessionTokenCookie(token: string, expiresAt: Date): Promise<void> {
     const cookieStore = await cookies();
@@ -31,7 +32,5 @@ export const getCurrentSession = cache(async () => {
     if (token === null) {
         return { session: null, user: null };
     }
-    const result = await validateSession(token);
-    return result;
+    return await validateSessionToken(token);
 });
-

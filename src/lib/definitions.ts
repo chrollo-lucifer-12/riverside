@@ -143,3 +143,5 @@ export const footerSections = [
         ]
     },
 ];
+
+export type EmailSignupActionState = {errors ? : {name ?: string[], email ? : string[], password ?: string[]}} | undefined
