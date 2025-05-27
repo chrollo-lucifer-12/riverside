@@ -2,6 +2,7 @@
 
 import CustomButton from "@/components/custom-button";
 import Image from "next/image";
+import Link from "next/link";
 
 const SignupForm = ({handleSwitchTab} : {handleSwitchTab : (r : "login" | "email") => void
 }) => {
@@ -11,10 +12,10 @@ const SignupForm = ({handleSwitchTab} : {handleSwitchTab : (r : "login" | "email
 </span>
         <div className={"flex flex-col gap-y-2 w-[70%] mt-2"}>
             <CustomButton type={"button"} >
-                <div className="relative flex items-center w-full">
+                <Link href={`${process.env.NEXT_PUBLIC_LOGIN_GOOGLE}`} className="relative flex items-center w-full">
                     <Image src="/icon_GOOGLE_color.svg" alt="Google icon" width={20} height={20} className="absolute left-0" />
                     <p className="flex-grow text-center font-bold">Continue with Google</p>
-                </div>
+                </Link>
             </CustomButton>
             <CustomButton type={"button"} >
                 <div className="relative flex items-center w-full">
