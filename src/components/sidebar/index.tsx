@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import DisplayRoutes from "@/components/sidebar/display-routes";
+import UserAvatar from "@/components/sidebar/user-avatar";
 
 const Sidebar = () => {
     return <aside className={"w-[17%] h-screen bg-gray-12 pt-6 pb-6 pl-4 pr-4 flex flex-col gap-y-2"}>
@@ -16,9 +17,15 @@ const Sidebar = () => {
                 />
             </Link>
         </header>
-        <section className={"mt-4"}>
-            <DisplayRoutes/>
+        <section className={"mt-4 flex flex-col justify-between h-full"}>
+            <section>
+                <DisplayRoutes/>
+            </section>
+            <section>
+                <UserAvatar/>
+            </section>
         </section>
+
     </aside>
 }
 
