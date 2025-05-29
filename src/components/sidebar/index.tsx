@@ -25,7 +25,6 @@ const Sidebar = () => {
                 <UserAvatar/>
             </section>
         </section>
-
     </aside>
 }
 

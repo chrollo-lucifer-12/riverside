@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 
 import type { NextRequest } from "next/server";
+import {getCurrentSession} from "@/lib/cookie";
+
+const protectedRoutes = ["/dashboard/home"]
 
 export async function middleware(request: NextRequest): Promise<NextResponse> {
     if (request.method === "GET") {
@@ -26,5 +29,13 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
             status: 403
         });
     }
+
+    if (protectedRoutes.includes(origin.pathname)) {
+        const {session} = await getCurrentSession();
+        if (!session) {
+            return NextResponse.redirect(new URL("/dashboard", request.url));
+        }
+    }
+
     return NextResponse.next();
 }

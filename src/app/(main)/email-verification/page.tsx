@@ -4,9 +4,9 @@ import {redirect} from "next/navigation";
 
 const EmailVerificationPage = async () => {
 
-    const {user} = await getCurrentSession();
+    const {user, session} = await getCurrentSession();
 
-    if (!user || user.emailVerified) {
+    if (!user || user.emailVerified || !session) {
         redirect("/dashboard")
     }
 

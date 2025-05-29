@@ -4,8 +4,8 @@ import {EmailLoginSchema, EmailSignupFormSchema, validateData} from "@/lib/schem
 import {EmailLoginActionState, EmailSignupActionState} from "@/lib/definitions";
 import {prisma} from "@/lib/db"
 import {hash, compare} from "bcrypt"
-import {createSession, generateSessionToken} from "@/lib/session";
-import {setSessionTokenCookie} from "@/lib/cookie";
+import {createSession, generateSessionToken, invalidateSession} from "@/lib/session";
+import {deleteSessionTokenCookie, getCurrentSession, setSessionTokenCookie} from "@/lib/cookie";
 import { Resend } from 'resend';
 import {revalidatePath} from "next/cache";
 
@@ -118,4 +118,17 @@ export const EmailLoginAction = async (state : EmailLoginActionState, formData :
     }
 
 
+}
+
+
+export const LogoutAction = async (state : any) => {
+    try {
+        const {user, session} = await getCurrentSession();
+        if (!session) return;
+        await invalidateSession(session.id)
+        await deleteSessionTokenCookie();
+        revalidatePath("/dashboard/home");
+    } catch (e) {
+        console.log(e);
+    }
 }
