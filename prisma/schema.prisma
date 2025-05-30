@@ -4,9 +4,8 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -17,7 +16,8 @@ model User {
   emailVerified      DateTime?
   sessions           Session[]
   verificationTokens VerificationToken[]
-  googleId String? @unique
+  googleId           String?             @unique
+  studio             Studio?
 }
 
 model Session {
@@ -33,4 +33,34 @@ model VerificationToken {
   userId    Int
   expiresAt DateTime
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Studio {
+  id       String    @id @default(uuid())
+  slug     String    @unique
+  owner    User      @relation(references: [id], fields: [ownerId])
+  ownerId  Int       @unique
+  projects Project[]
+}
+
+model Project {
+  id       String  @id @default(uuid())
+  name     String
+  studioId String
+  studio   Studio  @relation(references: [id], fields: [studioId])
+  medias   Media[]
+}
+
+model Media {
+  id        String    @id @default(uuid())
+  url       String
+  type      MediaType
+  project   Project   @relation(fields: [projectId], references: [id])
+  projectId String
+  createdAt DateTime  @default(now())
+}
+
+enum MediaType {
+  AUDIO
+  VIDEO
 }

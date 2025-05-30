@@ -121,7 +121,7 @@ export const EmailLoginAction = async (state : EmailLoginActionState, formData :
 }
 
 
-export const LogoutAction = async (state : any) => {
+export const LogoutAction = async () => {
     try {
         const {user, session} = await getCurrentSession();
         if (!session) return;

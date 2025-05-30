@@ -19,6 +19,7 @@
     "framer-motion": "^12.13.0",
     "jose": "^6.0.11",
     "lucide-react": "^0.511.0",
+    "nanoid": "^5.1.5",
     "next": "15.3.2",
     "nextjs-toploader": "^3.8.16",
     "prisma": "^6.8.2",

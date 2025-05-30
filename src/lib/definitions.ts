@@ -156,7 +156,7 @@ export const footerSections = [
 
 export const sidebar_links = [
     {name : "Home", href : "/dashboard/home", icon : HouseIcon},
-    {name: "Projects", href: "/dashboard/projects", icon : FolderClosedIcon},
+    {name: "Projects", href: "/dashboard/studio", icon : FolderClosedIcon},
     {name: "Scheduled", href: "/dashboard/scheduled", icon : CalendarCheckIcon}
 ]
 

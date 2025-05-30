@@ -6,6 +6,7 @@ import { decodeIdToken } from "arctic";
 import type { OAuth2Tokens } from "arctic";
 import {prisma} from "@/lib/db";
 import {setSessionTokenCookie} from "@/lib/cookie";
+import {nanoid} from "nanoid";
 
 export async function GET(request: Request): Promise<Response> {
     const url = new URL(request.url);
@@ -60,6 +61,13 @@ export async function GET(request: Request): Promise<Response> {
             emailVerified : new Date()
         }
     })
+
+    const studioName = `${user.email.slice(0,6)}-studios-${crypto.randomUUID()}-${nanoid(6)}`
+
+    await prisma.studio.create({data : {
+            ownerId : user.id,
+            slug : studioName
+        }})
 
     const sessionToken = generateSessionToken();
     const session = await createSession(sessionToken, user.id);
