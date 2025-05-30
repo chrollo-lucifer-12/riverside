@@ -16,7 +16,7 @@ const Page = async (props : {params : Promise<{slug : string}>}) => {
     });
 
     return (
-       <ProjectsPage projects={projects}/>
+       <ProjectsPage projects={projects} slug = {slug}/>
     );
 };
 

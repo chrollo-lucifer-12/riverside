@@ -7,9 +7,10 @@ import Link from "next/link";
 
 interface StudioPageProps {
     projects : {id : string,name : string}[]
+    slug : string
 }
 
-const ProjectsPage = ({projects} : StudioPageProps) => {
+const ProjectsPage = ({projects, slug} : StudioPageProps) => {
 
     if (!projects.length) {
         return <div className={"flex flex-col gap-y-4 items-center justify-center mt-[300px]"}>
@@ -53,7 +54,7 @@ const ProjectsPage = ({projects} : StudioPageProps) => {
         <div className={"mt-4 flex gap-x-2 min-w-[100vh]"}>
             {
                 projects.map((project,i) => (
-                    <Link href={`/`} key={i} className={"mt-10 flex flex-col  gap-y-2"}>
+                    <Link href={`/dashboard/studio/${slug}/projects/${project.id}`} key={i} className={"mt-10 flex flex-col  gap-y-2"}>
                         <div className={"rounded-md w-[360px] h-[215px] flex items-center justify-center cursor-pointer bg-gradient-to-b from-neutral-900 to-neutral-950 shadow-inner hover:from-gray-9 hover:to-gray-11 transition duration-200"}>
                             <FolderClosedIcon className={"w-8 h-8 text-gray-7"}/></div>
                         <p className={"font-semibold"}>{project.name}</p>
