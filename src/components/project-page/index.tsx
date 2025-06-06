@@ -1,11 +1,13 @@
 "use client";
 
-import { startTransition, useOptimistic, useState } from "react";
-import {UpdateProjectTitle} from "@/actions/projects";
+import { startTransition, useOptimistic, useState, useCallback } from "react";
+import { UpdateProjectTitle } from "@/actions/projects";
+import { debounce } from "lodash";
+import StartCreating from "@/components/project-page/start-creating";
 
 interface ProjectPageProps {
     name: string;
-    projectId : string
+    projectId: string;
 }
 
 const ProjectPage = ({ name, projectId }: ProjectPageProps) => {
@@ -16,27 +18,31 @@ const ProjectPage = ({ name, projectId }: ProjectPageProps) => {
         (_state, newTitle: string) => newTitle || "Untitled"
     );
 
-    const updateProjectTitle = async (newTitle: string) => {
-        await UpdateProjectTitle(projectId, newTitle)
-        setTitle(newTitle);
-    };
+    const debouncedUpdate = useCallback(
+        debounce(async (newTitle: string) => {
+            await UpdateProjectTitle(projectId, newTitle);
+            setTitle(newTitle);
+        }, 500),
+        [projectId]
+    );
 
     return (
-        <div className="pt-20 pb-20 pl-8 pr-8">
+        <div className="pt-20 pb-20 pl-8 pr-8 flex flex-col ">
             <input
                 value={optimisticTitle}
                 onChange={(e) => {
                     const newTitle = e.target.value;
-
                     startTransition(() => {
                         setOptimisticTitle(newTitle);
                     });
-
-                    updateProjectTitle(newTitle);
+                    debouncedUpdate(newTitle);
                 }}
                 className="text-2xl font-bold transition duration-200 w-full appearance-none outline-none"
                 placeholder="Untitled"
             />
+
+            <StartCreating/>
+
         </div>
     );
 };
