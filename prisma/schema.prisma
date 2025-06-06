@@ -52,12 +52,15 @@ model Project {
 }
 
 model Media {
-  id        String    @id @default(uuid())
-  url       String
-  type      MediaType
-  project   Project   @relation(fields: [projectId], references: [id])
-  projectId String
-  createdAt DateTime  @default(now())
+  id           String    @id @default(uuid())
+  preview_url  String
+  download_url String
+  title        String
+  type         MediaType
+  project      Project   @relation(fields: [projectId], references: [id])
+  projectId    String
+  isProcessing Boolean
+  createdAt    DateTime  @default(now())
 }
 
 enum MediaType {

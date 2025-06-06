@@ -40,7 +40,7 @@ const ProjectPage = ({ name, projectId }: ProjectPageProps) => {
                 className="text-2xl font-bold transition duration-200 w-full appearance-none outline-none"
                 placeholder="Untitled"
             />
-            <StartCreating/>
+            <StartCreating projectId = {projectId}/>
         </div>
     );
 };
