@@ -72,15 +72,8 @@ const VideoUploadDialog = ({setIsOpen, projectId} : {setIsOpen : (res : boolean)
                     setIsUploading(true);
 
                     try {
-                        const videoId = await UploadFile(selectedFile.name,projectId);
-                        const formData = new FormData();
-                        formData.append("file", selectedFile);
-                        formData.append("videoId", videoId!);
-                        const response = await axios.post("http://localhost:4000/api/v1/upload", formData, {
-                            headers: {
-                                'Content-Type': 'multipart/form-data',
-                            },
-                        });
+                      await UploadFile(selectedFile, projectId);
+
                         setIsOpen(false);
                     } catch (error) {
 

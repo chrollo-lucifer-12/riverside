@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Overpass, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import ReactQueryProvider from "@/react-query";
 
 const inter = Inter({
   subsets : ["latin"],
@@ -22,7 +23,10 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
+      <ReactQueryProvider>
+
         {children}
+      </ReactQueryProvider>
       </body>
     </html>
   );
