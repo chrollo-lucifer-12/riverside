@@ -1,4 +1,4 @@
-const Loading = () => {
+const ProjectSkeleton = () => {
     return <div className={"w-full pt-20 pl-8 pr-8 pb-20"}>
         <div className={"flex w-full justify-between items-center"}>
             <div className={"rounded-lg bg-gray-8 w-20 h-10"} />
@@ -11,4 +11,4 @@ const Loading = () => {
     </div>
 }
 
-export default Loading
+export default ProjectSkeleton

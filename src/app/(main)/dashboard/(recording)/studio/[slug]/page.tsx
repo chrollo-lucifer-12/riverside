@@ -1,4 +1,3 @@
-import { prisma } from "@/lib/db";
 import ProjectsPage from "@/components/projects-page";
 import {QueryClient} from "@tanstack/react-query";
 import {getProjects} from "@/lib/fetchData";

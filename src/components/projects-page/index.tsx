@@ -4,12 +4,24 @@ import Image from "next/image";
 import CustomButton from "@/components/custom-button";
 import {ArrowDownWideNarrowIcon, FolderClosedIcon, ListIcon, PlusIcon, SearchIcon} from "lucide-react";
 import Link from "next/link";
+import {useQueryData} from "@/hooks/useQueryData";
+import {getProjects} from "@/lib/fetchData";
+import {Projects} from "@/lib/definitions";
+import ProjectSkeleton from "@/components/skeletons/project-skeleton";
 
 interface StudioPageProps {
     slug : string
 }
 
 const ProjectsPage = ({ slug} : StudioPageProps) => {
+
+    const {data,isPending} = useQueryData(["projects"], () => getProjects(slug));
+
+    if (isPending) {
+        return <ProjectSkeleton/>
+    }
+
+    const projects = data as Projects
 
     if (!projects.length) {
         return <div className={"flex flex-col gap-y-4 items-center justify-center mt-[300px]"}>

@@ -5,12 +5,13 @@ import Image from "next/image";
 import {useState} from "react";
 import CustomButton from "@/components/custom-button";
 import {UploadFile} from "@/actions/video";
-import axios from "axios";
+import {useMutationData} from "@/hooks/useMutationData";
 
 const VideoUploadDialog = ({setIsOpen, projectId} : {setIsOpen : (res : boolean) => void, projectId : string}) => {
 
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
-    const [isUploading, setIsUploading] = useState(false);
+
+    const {isPending, mutate} =  useMutationData(["upload-video"], (data) => UploadFile(data.selectedFile, data.projectId), "project-videos");
 
     const formatSizeMB = (bytes: number) => {
         return (bytes / (1024 * 1024)).toFixed(2);
@@ -63,26 +64,9 @@ const VideoUploadDialog = ({setIsOpen, projectId} : {setIsOpen : (res : boolean)
         }
         {
             selectedFile &&  <footer className={"mt-4 w-full"}>
-                <CustomButton onClick={async () => {
-                    if (!selectedFile) {
-                        console.error('No file selected');
-                        return;
-                    }
-
-                    setIsUploading(true);
-
-                    try {
-                      await UploadFile(selectedFile, projectId);
-
-                        setIsOpen(false);
-                    } catch (error) {
-
-                    } finally {
-                        setIsUploading(false);
-                    }
-                }} disabled={isUploading} type={"button"} cn={"w-full bg-blue-500 hover:bg-blue-600"}>
+                <CustomButton onClick={() => mutate({selectedFile,projectId})} disabled={isPending} type={"button"} cn={"w-full bg-blue-500 hover:bg-blue-600"}>
                     <p className={"font-bold text-white"}>{
-                        isUploading ? "Uploading" : "Uplaod"
+                        isPending ? "Uploading" : "Upload"
                     }
                     </p>
                 </CustomButton>

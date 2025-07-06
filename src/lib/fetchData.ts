@@ -1,4 +1,4 @@
-import "server-only"
+"use server"
 
 export const getProjectVideos = async (projectId : string) => {
     const videos = await prisma?.media.findMany({where : {projectId}});

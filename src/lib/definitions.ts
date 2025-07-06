@@ -7,6 +7,7 @@ import {
     UserIcon,
     ZapIcon
 } from "lucide-react";
+import {MediaType} from "@/generated/prisma";
 
 export const NavbarItems_1 = [{name : "Product"}, {name : "Solutions"}, {name : "Resources"}, {name : "For Business"}, {name : "Pricing"}]
 
@@ -173,3 +174,20 @@ export const user_menu_options = [
 
 export type EmailSignupActionState = {errors ? : {name ?: string[], email ? : string[], password ?: string[]}} | undefined
 export type EmailLoginActionState = {errors ? : { email ? : string[], password ?: string[]}} | undefined
+
+export type Projects =  {
+    id: string
+    name: string
+    studioId: string
+}[]
+
+export type ProjectVideos =  {
+    projectId: string
+    id: string
+    preview_url: string
+    download_url: string
+    title: string
+    type: MediaType
+    isProcessing: boolean
+    createdAt: Date
+}[]
