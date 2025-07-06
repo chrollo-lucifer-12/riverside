@@ -4,14 +4,31 @@ import {TrashIcon, XIcon} from "lucide-react";
 import Image from "next/image";
 import {useState} from "react";
 import CustomButton from "@/components/custom-button";
-import {UploadFile} from "@/actions/video";
 import {useMutationData} from "@/hooks/useMutationData";
+import {UploadFile} from "@/actions/video";
+
+type UploadVideoInput = {
+    selectedFile: File;
+    projectId: string;
+};
+
+type UploadVideoResponse = {
+    message: string;
+    videoId: string;
+    url: string;
+};
+
 
 const VideoUploadDialog = ({setIsOpen, projectId} : {setIsOpen : (res : boolean) => void, projectId : string}) => {
 
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
-    const {isPending, mutate} =  useMutationData(["upload-video"], (data) => UploadFile(data.selectedFile, data.projectId), "project-videos");
+    const { isPending, mutate } = useMutationData(
+        ["upload-video"],
+        (data) => UploadFile(data.selectedFile, data.projectId),
+        "project-videos"
+    );
+
 
     const formatSizeMB = (bytes: number) => {
         return (bytes / (1024 * 1024)).toFixed(2);
@@ -65,10 +82,13 @@ const VideoUploadDialog = ({setIsOpen, projectId} : {setIsOpen : (res : boolean)
         {
             selectedFile &&  <footer className={"mt-4 w-full"}>
                 <CustomButton onClick={() => mutate({selectedFile,projectId})} disabled={isPending} type={"button"} cn={"w-full bg-blue-500 hover:bg-blue-600"}>
-                    <p className={"font-bold text-white"}>{
-                        isPending ? "Uploading" : "Upload"
+                    {
+                        isPending ? ( <p className={"font-bold text-white"}>
+                              Uploading
+                        </p>) : (<p className={"font-bold text-white"}>
+                            Upload
+                        </p>)
                     }
-                    </p>
                 </CustomButton>
             </footer>
         }

@@ -1,4 +1,5 @@
 "use server"
+import {prisma} from "@/lib/db"
 
 export const getProjectVideos = async (projectId : string) => {
     const videos = await prisma?.media.findMany({where : {projectId}});

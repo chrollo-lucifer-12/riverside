@@ -8,6 +8,7 @@ import CustomButton from "@/components/custom-button";
 import { PlusIcon } from "lucide-react";
 import { useState } from "react";
 import VideoUploadDialog from "@/components/project-page/video-upload-dialog";
+import Image from "next/image";
 
 interface ProjectPageProps {
     name: string;
@@ -76,9 +77,12 @@ const ProjectPage = ({ name, projectId }: ProjectPageProps) => {
                         className="border border-gray-10 rounded-lg p-4 shadow-sm"
                     >
                         {
-                            video.preview_url ? (<video
+                            video.preview_url ? (<Image
                                 className="w-full rounded-md"
                                 src={video.preview_url}
+                                width={32}
+                                height={20}
+                                alt={""}
                             />) : (<div className={"w-full"}>loading</div>)
                         }
 
