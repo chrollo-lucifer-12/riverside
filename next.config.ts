@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
         }
     },
     images : {
-        remotePatterns : [{hostname : "cdn.prod.website-files.com"},{hostname : "app.riverside.fm"}, {hostname : "image.mux.com"}]
+        remotePatterns : [{hostname : "cdn.prod.website-files.com"},{hostname : "app.riverside.fm"}, {hostname : "image.mux.com"},{hostname : "ycclekeqobvyucspuanv.supabase.co"}]
     }
 };
 

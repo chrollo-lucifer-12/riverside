@@ -26,9 +26,9 @@ const VideoDisplay = ({videos} : {videos : ProjectVideos}) => {
                 }
 
                 <div className="mt-2">
-                    <p className="font-semibold text-lg truncate">{video.title}</p>
+                    <p className="font-semibold text-lg truncate">{video.filename}</p>
                     <p className="text-sm text-gray-500">
-                        {video.isProcessing ? "Processing..." : "Ready"}
+                        {video.video.isProcessing ? "Processing..." : "Ready"}
                     </p>
                     <p className="text-xs text-gray-400">
                         {new Date(video.createdAt).toLocaleString()}

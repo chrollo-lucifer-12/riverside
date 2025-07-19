@@ -4,8 +4,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -52,15 +53,34 @@ model Project {
 }
 
 model Media {
-  id           String    @id @default(uuid())
-  preview_url  String
-  download_url String
-  title        String
+  id           String        @id @default(uuid())
   type         MediaType
-  project      Project   @relation(fields: [projectId], references: [id])
+  project      Project       @relation(fields: [projectId], references: [id])
   projectId    String
   isProcessing Boolean
-  createdAt    DateTime  @default(now())
+  createdAt    DateTime      @default(now())
+  metadata     Metadata?
+  videoAssets  VideoAssets[]
+}
+
+model Metadata {
+  id          String   @id @default(uuid())
+  video       Media    @relation(fields: [mediaId], references: [id])
+  mediaId     String   @unique
+  filename    String?
+  duration    Decimal?
+  preview_url String?
+  full_url    String?
+  createdAt   DateTime @default(now())
+}
+
+model VideoAssets {
+  id        String    @id @default(uuid())
+  type      MediaType
+  url       String?
+  createdAt DateTime  @default(now())
+  mediaId   String
+  video     Media     @relation(fields: [mediaId], references: [id])
 }
 
 enum MediaType {

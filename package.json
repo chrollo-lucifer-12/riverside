@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
     "@oslojs/crypto": "^1.0.1",
     "@oslojs/encoding": "^1.1.0",
     "@prisma/client": "^6.8.2",
     "@tanstack/react-query": "^5.80.7",
+    "@tanstack/react-query-devtools": "4",
     "@types/bcrypt": "^5.0.2",
     "arctic": "^3.7.0",
     "axios": "^1.9.0",

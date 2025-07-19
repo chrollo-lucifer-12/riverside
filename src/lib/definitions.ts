@@ -8,6 +8,8 @@ import {
     ZapIcon
 } from "lucide-react";
 import {MediaType} from "@/generated/prisma";
+import {Property} from "csstype";
+import Float = Property.Float;
 
 export const NavbarItems_1 = [{name : "Product"}, {name : "Solutions"}, {name : "Resources"}, {name : "For Business"}, {name : "Pricing"}]
 
@@ -181,13 +183,16 @@ export type Projects =  {
     studioId: string
 }[]
 
-export type ProjectVideos =  {
-    projectId: string
+export type ProjectVideos =   ({
+    video: {
+        isProcessing: boolean
+    }
+} & {
     id: string
-    preview_url: string
-    download_url: string
-    title: string
-    type: MediaType
-    isProcessing: boolean
+    mediaId: string
+    filename: string | null
+    duration: Float | null
+    preview_url: string | null
+    full_url: string | null
     createdAt: Date
-}[]
+})[]
